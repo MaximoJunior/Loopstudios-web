@@ -21,11 +21,17 @@
     <div class="container-header">
       <div class="header-head">
         <div>
-          <img src="./images/logo.svg" id="logo" alt="logo">
+          <img src="./images/logo.svg" class="logo" alt="logo">
         </div>
         <button class="btn-toggle-menu"><img src="images/icon-hamburger.svg"></button>
-        <nav id="menu">
-          <ul>
+        <nav class="menu">
+          <div class="menu-head">
+            <div>
+              <img src="./images/logo.svg" class="logo" alt="logo">
+            </div>
+            <button id="btn-close-menu">&times;</button>
+          </div>
+          <ul class="menu-nav">
             <li><a href="#">About</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">Events</a></li>
@@ -99,5 +105,21 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Maximo Moreno</a>.
   </div>
+  <script>
+      const btnToggleMenu = document.querySelector(".btn-toggle-menu");
+      const btnCloseMenu = document.querySelector("#btn-close-menu");
+
+      btnToggleMenu.addEventListener("click", (event) => {
+          toggleMenu();
+      })
+
+      btnCloseMenu.addEventListener("click", (event) => {
+          toggleMenu();
+      })
+
+      function toggleMenu(){
+        document.querySelector(".menu").classList.toggle("menu-open");
+      }
+  </script>
 </body>
 </html>
