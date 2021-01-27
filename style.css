@@ -64,6 +64,7 @@ body{
     overflow: hidden;
     transition: height 500ms ease-in-out;
  }
+
  .menu-open {
      height: 100%;
  }
@@ -80,6 +81,7 @@ body{
      font-size: 45px;
      font-weight: 300;
  }
+
 .menu-nav {
     position: absolute;
     top: 50%;
@@ -111,6 +113,8 @@ body{
      border: none;
  }
 
+ 
+
  /*End Menu*/
  /*Title*/
  header h1 {
@@ -129,6 +133,79 @@ body{
      border: 2px solid var(--white-color);
  }
  /*End title*/
+
+ @media screen and (min-width: 750px){
+    :root{
+        --margin-perimeter: 150px;
+    }
+    header{
+        background-image: url('images/desktop/image-hero.jpg');
+        height: 80vh;
+    }
+    header::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.226);
+        opacity: 0.3;
+    }
+    .header-head{
+        justify-content: space-between;
+    }
+    .btn-toggle-menu { display: none;}
+    .menu {
+        position: static;
+      
+        height: auto;
+        background-color: inherit;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .menu-head {
+        display: none;
+    }
+    .menu-nav {
+        position: static;
+        top: 0;
+        left: 0;
+        transform: translateY(0);
+    }
+
+    .menu-nav li{
+        display: initial;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu-nav li a{
+       font-size: 13px;
+       font-weight: bold;
+       text-transform: capitalize;
+       color: white;
+       opacity: none;
+       display: initial;
+       padding:0;
+       margin: 5px 8px;
+    }
+
+    header h1 {
+        width: fit-content;
+        min-width: 400px;
+        max-width: 500px;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        font-size: 3rem;
+    }
+    
+ 
+
+}
 
  /*Sections*/
  .section {
