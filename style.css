@@ -41,9 +41,9 @@ body{
  }
 
  .logo {
-    min-width: 75%;
+    
     width: 75%;
-    max-width: 100%;
+    min-width: 75%;
  }
 
  .header-head {
@@ -136,7 +136,7 @@ body{
 
  @media screen and (min-width: 750px){
     :root{
-        --margin-perimeter: 150px;
+        --margin-perimeter: 180px;
     }
     header{
         background-image: url('images/desktop/image-hero.jpg');
@@ -150,8 +150,8 @@ body{
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.226);
-        opacity: 0.3;
+        background-color: rgba(0, 0, 0, 0.534);
+        
     }
     .header-head{
         justify-content: space-between;
@@ -179,18 +179,35 @@ body{
     .menu-nav li{
         display: initial;
         margin: 0;
-        padding: 0;
+        padding: 10px 8px;
     }
 
     .menu-nav li a{
-       font-size: 13px;
-       font-weight: bold;
+       display: inline-block;
+       position: relative;
+       font-size: 15px;
+       font-family: 'Josefin Sans';
        text-transform: capitalize;
        color: white;
-       opacity: none;
-       display: initial;
-       padding:0;
-       margin: 5px 8px;
+    }
+
+    .menu-nav li a::after{
+        display: block;
+        opacity: 0;
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 3px;
+        transform: translateX(-50%);
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        border-radius: 4px;
+        transition: opacity 300ms ease-in;
+    }
+
+    .menu-nav li a:hover::after{
+        opacity: 1;
     }
 
     header h1 {
