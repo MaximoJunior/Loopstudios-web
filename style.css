@@ -485,12 +485,12 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
+    background-color: var(--black-color);
     padding: 50px var(--margin-perimeter);
 }
 
 .footer-logo {
-    width: 50%;
+    width: 100%;
     min-width: 50%;
     max-width: 100%;
     margin-bottom: 20px;
@@ -511,14 +511,110 @@ footer {
     opacity: 0.9;
 }
 
+.container-social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-social-media button{
    background-color: black;
    border: none;
    margin: 0 8px;
+   cursor: pointer;
 }
 
 .copyright {
     color: var(--color-dark-gray);
     margin-top: 15px;
     font-size: 13px;
+}
+
+@media screen and (min-width: 750px){
+   footer {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 25px;
+   }
+
+   .footer-box1{
+       padding-right: 10px;
+   }
+
+   .footer-box2{
+    padding-left: 10px;
+   }
+
+   .footer-container-links li {
+       display: inline-block;
+       margin: 4px 0;
+       margin-left:5px;
+       text-align: left;
+   }
+
+   .footer-container-links li a {
+       display: inline-block;
+       position: relative;
+   }
+
+   .footer-container-links li a::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      border-radius: 4px;
+      background-color: white;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 300ms ease-in;
+   }
+   .footer-container-links li a:hover::after{
+       opacity: 0.8;
+   }
+   .footer-logo {
+       margin-bottom: 8px;
+       width: 60%;
+   }
+
+   .container-social-media{
+       display: block;
+   }
+
+   .container-social-media button {
+    position: relative;
+    display: block;
+    float: right;
+   }
+   .container-social-media button::after{
+       content: "";
+       display: block;
+       position: absolute;
+       width: 20px;
+       height: 2px;
+       background-color: white;
+       border-radius: 4px;
+       bottom: -5px;
+       left: 50%;
+       transform: translateX(-50%);
+       opacity: 0;
+       transition: opacity 300ms ease-in;
+   }
+
+   .container-social-media button:hover::after{
+       opacity: 0.8;
+   }
+
+   .container-social-media::after {
+       display: block;
+       content: "";
+       clear: both;
+   }
+   
+   .copyright{
+       text-align: right;
+   }
 }
