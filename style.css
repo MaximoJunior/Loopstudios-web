@@ -103,7 +103,7 @@ body{
      font-family: 'Josefin Sans';
      padding: 10px 0;
      font-size: 23px;
-     font-weight: 300;
+     font-weight: bold;
      text-transform: uppercase;
      opacity: 0.9;
  }
@@ -517,11 +517,11 @@ footer {
     align-items: center;
 }
 
-.container-social-media button{
+.container-social-media a{
    background-color: black;
    border: none;
    margin: 0 8px;
-   cursor: pointer;
+ 
 }
 
 .copyright {
@@ -584,12 +584,12 @@ footer {
        display: block;
    }
 
-   .container-social-media button {
+   .container-social-media a {
     position: relative;
     display: block;
     float: right;
    }
-   .container-social-media button::after{
+   .container-social-media a::after{
        content: "";
        display: block;
        position: absolute;
@@ -604,7 +604,7 @@ footer {
        transition: opacity 300ms ease-in;
    }
 
-   .container-social-media button:hover::after{
+   .container-social-media a:hover::after{
        opacity: 0.8;
    }
 
